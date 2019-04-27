@@ -25,9 +25,18 @@ class testCalculoFibonacci {
 		esperado[2] = 2;
 		esperado[3] = 3;
 		
-		
+		//CTRL + SPACE en JUnit permite abrir la ayuda
+			
 		assertArrayEquals(esperado,calculado);
 		
+	}
+	
+	@Test(timeout = 100)
+	public void testTiempoFibo() {
+		cF = new calculoFibonacci(a);
+		cF.fibo(a);
+		
+		//assertTimeout(1.0, cF.fibo(a));
 	}
 
 }
