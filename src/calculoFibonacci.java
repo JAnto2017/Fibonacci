@@ -9,10 +9,10 @@ public class calculoFibonacci {
 	}
 	
 	//-----------------------------------------------
-	public long[] fibo(long l) {
+	public long[] fibo(long _l) {
 		
 		//calculoFibonacci cF = 
-		new calculoFibonacci((int) l);
+		new calculoFibonacci((int) _l);
 		
 		vec[0] = 1;
 		vec[1] = 1;
