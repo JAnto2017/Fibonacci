@@ -1,5 +1,8 @@
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.Duration;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class testCalculoFibonacci {
@@ -31,12 +34,21 @@ class testCalculoFibonacci {
 		
 	}
 	
-	@Test(timeout = 100)
+	@Test
 	public void testTiempoFibo() {
 		cF = new calculoFibonacci(a);
 		cF.fibo(a);
 		
 		//assertTimeout(1.0, cF.fibo(a));
+		//assertTimeout(1, cF.fibo(1));
+		
+		Assertions.assertTimeout(Duration.ofMillis(1), () -> {
+	        Thread.sleep(2);
+	        //return "result";
+			cF.fibo(a);
+	    });
 	}
+	
+	
 
 }
